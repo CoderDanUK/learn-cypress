@@ -1,4 +1,4 @@
- /// <reference types="cypress" />
+/// <reference types="cypress" />
 
 describe("My third test suite", () => {
   beforeEach(function () {
@@ -11,5 +11,6 @@ describe("My third test suite", () => {
     cy.visit("https://rahulshettyacademy.com/angularpractice/")
     cy.get("input[name='name']:nth-child(2)").type(this.user.name)
     cy.get("select").select(this.user.gender)
+    cy.get(":nth-child(4) > .ng-untouched").should("have.value", this.user.name)
   })
 })
